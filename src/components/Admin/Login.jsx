@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../redux/auth';
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -7,6 +8,14 @@ const Login = () => {
   const loginHandler = (event) => {
     event.preventDefault();
     dispatch(authActions.adminLogin());
+
+    Swal.fire({
+      title: 'Login',
+      text: 'Successful',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    })
+    
   };
   return (
     <main className='auth'>

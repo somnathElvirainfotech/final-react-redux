@@ -1,25 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialAuthState = {
   isAuthenticated: false,
-  isAdmin:false
+  isAdmin: false,
 };
 
-const authSlice = createSlice({
+const authSlice = createSlice ({
   name: 'authentication',
   initialState: initialAuthState,
   reducers: {
-    userLogin(state) {
+    userLogin (state) {
       state.isAuthenticated = true;
     },
-    adminLogin(state) {
+    adminLogin (state) {
       state.isAuthenticated = true;
-      state.isAdmin=true;
+      state.isAdmin = true;
     },
-    logout(state) {
+    logout (state) {
       state.isAuthenticated = false;
-      state.isAdmin=false;
-      localStorage.clear();
+      state.isAdmin = false;
+      localStorage.clear ();
     },
   },
 });

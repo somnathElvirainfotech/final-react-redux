@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-function NotFound() {
+function NotFound () {
   return (
     <center>
-        <h1>Not Found!!</h1>
-        <br/><br/>
-        <Link to="/">Home</Link>
+      <h1>Not Found!!</h1>
+      <br /><br />
+      <Link to="/">Home</Link>
     </center>
-  )
+  );
 }
 
-export default NotFound
+export default NotFound;

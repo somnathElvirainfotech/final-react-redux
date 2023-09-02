@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { authActions } from '../redux/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -7,6 +8,8 @@ const Login = () => {
   const loginHandler = (event) => {
     event.preventDefault();
     dispatch(authActions.userLogin());
+    
+    toast.success("Login Successfull")
   };
   return (
     <main className='auth'>

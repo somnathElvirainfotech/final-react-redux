@@ -16,8 +16,6 @@ export const UserRequireAuth = ({children}) => {
   }
 };
 
-
-
 export const AdminRequireAuth = ({children}) => {
   const {isAuthenticated, isAdmin} = useSelector (state => state.auth);
 
@@ -31,7 +29,6 @@ export const AdminRequireAuth = ({children}) => {
     return children;
   }
 };
-
 
 export const WithOutAuth = ({children}) => {
   const {isAuthenticated, isAdmin} = useSelector (state => state.auth);
