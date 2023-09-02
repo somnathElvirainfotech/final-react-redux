@@ -6,10 +6,6 @@ function App() {
 
   return (
     <>
-      {/* <Header />
-      {!isAuth && <Auth />}
-      {isAuth && <UserProfile />}
-      <Counter /> */}
       <RouterProvider router={router} />
     </>
   );
