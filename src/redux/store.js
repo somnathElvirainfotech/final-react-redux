@@ -13,7 +13,7 @@ const encryptor = encryptTransform({
   secretKey: encryptionKey,
   onError: function (error) {
     // Handle encryption errors here 
-    console.error('Encryption error:', error);
+    console.error('Encryption error: ', error);
   },
 });
 
