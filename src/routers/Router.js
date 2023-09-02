@@ -5,15 +5,15 @@ import {AdminRequireAuth, UserRequireAuth, WithOutAuth} from './MiddleWare';
 import NotFound from './NotFound';
 
 
-import Header from '../components-Test/Header';
-import Counter from '../components-Test/Counter';
-import UserProfile from '../components-Test/UserProfile';
-import Login from '../components-Test/Login';
+import Header from '../components/Header';
+import Counter from '../components/Counter';
+import UserProfile from '../components/UserProfile';
+import Login from '../components/Login';
 
-import AdminHeader from '../components-Test/Admin/Header';
-import Dashboard from '../components-Test/Admin/Dashboard'
-import UserList from '../components-Test/Admin/UserList';
-import AdminLogin from '../components-Test/Admin/Login';
+import AdminHeader from '../components/Admin/Header';
+import Dashboard from '../components/Admin/Dashboard'
+import UserList from '../components/Admin/UserList';
+import AdminLogin from '../components/Admin/Login';
 
 function ErrorBoundary () {
   let error = useRouteError ();
