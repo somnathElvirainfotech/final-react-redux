@@ -1,0 +1,4 @@
+A.After Create Default React App Install Those Packages
+====>
+1.npm install --save-dev @babel/plugin-proposal-private-property-in-object --force
+2.npm install @reduxjs/toolkit react-redux redux-persist redux-persist-transform-encrypt redux-thunk react-router-dom --force
