@@ -1,0 +1,132 @@
+on: 
+    push:
+      branches:
+        - main
+name: 🚀 Deploy website on push
+  
+jobs:
+    web-server-deploy:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+
+
+        steps:
+        - name: Deploy using ssh
+          uses: appleboy/ssh-action@master
+          with:
+            host: 198.71.57.34
+            username: root
+            password: Gz8sa0!62
+            port: 22
+            script: |
+              export NVM_DIR=~/.nvm
+              source ~/.nvm/nvm.sh
+              cd /var/www/vhosts/elvirainfotech.org/test3
+              git pull origin main
+              git status
+              npm install --force
+            
+
+
+    # web-deploy:
+    #   name: 🎉 Deploy
+    #   runs-on: ubuntu-latest
+    #   steps:
+    #   - name: 🚚 Get latest code
+    #     uses: actions/checkout@v3
+  
+    #   - name: Use Node.js 20
+    #     uses: actions/setup-node@v2
+    #     with:
+    #       node-version: '20'
+        
+    #   - name: 🔨 Build Project
+    #     run: |
+    #       cd fmi_frontend
+    #       npm install --force
+    #       npm run build
+
+      
+    #   - name: 📂 Sync files
+    #     uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    #     with:
+    #       server: server.elvirainfotech.org
+    #       username: test3
+    #       password: ^3cb7R73x
+    #       protocol: ftp
+    #       local-dir: ./frontend/dist/
+
+
+
+    # old-server-deploy:
+    #   name: 🎉 Deploy
+    #   runs-on: ubuntu-latest
+        
+
+    #   -------- with ftp connection -----------
+    #   steps:
+    #   - name: 🚚 Get latest code
+    #     uses: actions/checkout@v3
+  
+    #   - name: Use Node.js 20
+    #     uses: actions/setup-node@v2
+    #     with:
+    #       node-version: '20'
+
+    #   - name: 📂 files upload
+    #     uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    #     with:
+    #       server: culturalcupid.com
+    #       username: culturalcupid_corner@culturalcupid.com
+    #       password: IO(8fYWHPeWC
+    #       protocol: ftp
+    #       local-dir: ./backend/
+    #       server-dir: backend_culturalcupid/
+        
+    #   - name: 🔨 Build Project
+    #     run: |
+    #       cd backend
+    #       npm install
+    #       yarn gen
+    #       pm2 restart 1
+
+
+    #   ------------- main backend deploy code ---------- 
+
+    #   steps:
+    #     # - name: 🚚 Get latest code
+    #     #   uses: actions/checkout@v3
+
+    #     # - name: 📂 files upload with FTP
+    #     #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    #     #   with:
+    #     #     server: culturalcupid.com
+    #     #     username: culturalcupid_corner@culturalcupid.com
+    #     #     password: IO(8fYWHPeWC
+    #     #     protocol: ftp
+    #     #     local-dir: ./backend/
+    #     #     server-dir: backend_culturalcupid/
+
+    #     - name: Deploy using ssh
+    #       uses: appleboy/ssh-action@master
+    #       with:
+    #         host: 198.71.57.34
+    #         username: root
+    #         password: 5NSo4atT
+    #         port: 22
+    #         script: |
+    #           export NVM_DIR=~/.nvm
+    #           source ~/.nvm/nvm.sh
+    #           cd /var/www/vhosts/elvirainfotech.org/fmiordersystem
+    #           npm install --force
+    #           pm2 restart 6
+    #           cd fmi_frontend
+    #           npm install --force
+    #           npm run build --force
+               
+
+        
+
+
+      
+      
