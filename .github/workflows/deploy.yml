@@ -22,7 +22,9 @@ jobs:
               export NVM_DIR=~/.nvm
               source ~/.nvm/nvm.sh
               cd /var/www/vhosts/elvirainfotech.org/test3
-              sudo git pull origin main
+              eval "$(ssh-agent -s)"
+              ssh-add ~/.ssh/somnath_git_deploy_key
+              git pull origin main
               git status
               npm install --force
             
